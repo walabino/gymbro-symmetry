@@ -1,0 +1,70 @@
+{
+  "expo": {
+    "name": "GymBro - Fitness Tracker",
+    "slug": "gymbro-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "scheme": "gymbro",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#000000"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.gymbro.mobile",
+      "infoPlist": {
+        "NSCameraUsageDescription": "GymBro necesita acceso a la cámara para tomar fotos de progreso.",
+        "NSPhotoLibraryUsageDescription": "GymBro necesita acceso a tu galería para seleccionar fotos de progreso.",
+        "NSMicrophoneUsageDescription": "GymBro necesita acceso al micrófono para videos de ejercicios."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#000000"
+      },
+      "package": "com.gymbro.mobile",
+      "permissions": [
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "RECORD_AUDIO",
+        "POST_NOTIFICATIONS"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notification-icon.png",
+          "color": "#ffffff",
+          "sounds": ["./assets/notification-sound.wav"]
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "GymBro necesita acceso a la cámara para tomar fotos de tu progreso fitness."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "GymBro necesita acceso a tu galería para seleccionar fotos de progreso."
+        }
+      ]
+    ],
+    "extra": {
+      "apiUrl": "http://localhost:3000/api"
+    }
+  }
+}
